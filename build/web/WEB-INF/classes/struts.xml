@@ -5,6 +5,11 @@
 <struts>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        
+        <action name="createNewComment" class="web.controller.CreateNewComment" >
+            <result name="success" type="chain">index</result>
+        </action>
+        <action name="index" class="web.controller.LoadAllComments" >
+            <result name="success">index.jsp</result>
+        </action>
     </package>
 </struts>

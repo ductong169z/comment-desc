@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri = "/struts-tags" prefix = "s" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -163,9 +164,9 @@
                 <div class="col-12">
                     <div class="comments">
                         <div class="comments-details">
-                            <span class="total-comments comments-sort">xx Comments</span>
+                            <span class="total-comments comments-sort"><s:property value ="commentList.size()"/> Comments</span>
                             <span class="dropdown">
-                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">Sort By <span class="caret"></span></button>
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="padding-bottom:12px!important;">Sort By <span class=""></span></button>
                                 <div class="dropdown-menu">
                                     <a href="#" class="dropdown-item">Newest First</a>
                                 </div>
@@ -181,41 +182,42 @@
                             </span>
 
                         </div>
-                        <div class="comment-box">
-                            <span class="commenter-pic">
-                                <img src="images/user-icon.png" class="img-fluid">
-                            </span>
-                            <span class="commenter-name">
-                                <a href="#">Email</a> <span class="comment-time">Date time</span>
-                            </span>       
-                            <p class="comment-txt more">Message</p>
-
-                        </div>
+                        <s:iterator value="commentList">
+                            <div class="comment-box">
+                                <span class="commenter-pic">
+                                    <img src="images/user-icon.png" class="img-fluid">
+                                </span>
+                                <span class="commenter-name">
+                                    <s:property value="email" /><a href="#"></a> <span class="comment-time"><s:property value="created_at" /></span>
+                                </span>       
+                                <p class="comment-txt more"><s:property value="content" /></p>
+                            </div>
+                        </s:iterator>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">New comment</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
                                         <!--     add action here-->
-                                        <form action="#" method="POST" id="message-form">
+                                        <form action="createNewComment" method="POST" id="message-form">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Email:</label>
                                                 <input type="text" class="form-control" id="email" name="email">
                                             </div>
                                             <div class="form-group">
-                                                <label for="message-text" class="col-form-label">Message:</label>
-                                                <textarea class="form-control" id="message-text" name="message-text"></textarea>
+                                                <label for="comment" class="col-form-label">Comment:</label>
+                                                <textarea class="form-control" id="message-text" name="comment"></textarea>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" style="background: #ccc;color: #000" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary" style="background: #03a9f4;color: #000" id="btn-submit">Send message</button>
+                                        <button type="button" class="btn btn-primary" style="background: #03a9f4;color: #000" id="btn-submit">Comment</button>
                                     </div>
                                 </div>
                             </div>
