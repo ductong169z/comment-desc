@@ -1,8 +1,6 @@
 package web.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.util.logging.Logger;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import web.model.CommentDTO;
 import web.model.WebDAO;
@@ -13,21 +11,27 @@ import web.model.WebDAO;
  */
 public class LoadAllComments extends ActionSupport {
 
-    private ArrayList<CommentDTO> commentList;
+    private ArrayList<CommentDTO> commentList; // store comment list loaded from database
 
+    /* Constructor */
     public LoadAllComments() {
-
     }
 
+    /**
+     * Main execute method for Action
+     * @return
+     * @throws Exception
+     */
     @Override
     public String execute() throws Exception {
-        WebDAO dao = new WebDAO();
+        WebDAO dao = new WebDAO(); // create an object to interact with database
 
-        commentList = dao.getAllComments();
+        commentList = dao.getAllComments(); // get all comments from database
 
         return "success";
     }
 
+    /* Getters and Setters */
     public ArrayList<CommentDTO> getCommentList() {
         return commentList;
     }

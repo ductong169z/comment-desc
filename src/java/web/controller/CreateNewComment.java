@@ -1,8 +1,6 @@
 package web.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.util.logging.Logger;
-import java.sql.SQLException;
 import web.model.WebDAO;
 
 /**
@@ -11,17 +9,20 @@ import web.model.WebDAO;
  */
 public class CreateNewComment extends ActionSupport {
 
-    private String email;
-    private String comment;
+    private String email; // email user entered
+    private String comment; // comment user entered
 
+    /* Constructor */
     public CreateNewComment() {
-
     }
 
     @Override
     public String execute() throws Exception {
-        WebDAO dao = new WebDAO();
+        WebDAO dao = new WebDAO(); // create an object to interact with database
 
+        /* Try to create new comment using the email and comment user entered
+        return success if created successfully, else return fail
+        */
         if (dao.createNewComment(email, comment)) {
             return "success";
         }
@@ -29,6 +30,7 @@ public class CreateNewComment extends ActionSupport {
         return "fail";
     }
 
+    /* Getters and Setters */
     public String getEmail() {
         return email;
     }
@@ -44,4 +46,5 @@ public class CreateNewComment extends ActionSupport {
     public void setComment(String comment) {
         this.comment = comment;
     }
+    
 }

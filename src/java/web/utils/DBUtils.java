@@ -1,6 +1,6 @@
 /**
  *
- * @author Duc Tong, Duc Loc, Tien Minh)
+ * @author Duc Tong, Duc Loc, Tien Minh
  */
 package web.utils;
 
@@ -20,8 +20,8 @@ public class DBUtils {
      */
     public static Connection makeConnection() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/comment","root", "");
+            Class.forName("com.mysql.jdbc.Driver"); // load JDBC MySQL class
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/comment","root", ""); // get connection from database
 
             return conn;
 

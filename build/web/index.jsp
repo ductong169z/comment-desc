@@ -132,7 +132,7 @@
     </head>
     <body>
         <div class="container" style="background: #FFFFFF!important">
-
+            <%-- Navigation bar area --%>
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                 <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,37 +141,37 @@
                 <div class="collapse navbar-collapse" id="navbarsExample03">
                 </div>
                 <img src="images/user-icon.png" width="40px" height="60px" class="img-fluid">
-
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
-
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-
-                            Welcome,Uzaki-chan <b class="caret"></b>
+                    <li>
+                        <a href="#" class="nav-link" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                            Welcome, Uzaki-chan <b class="caret"></b>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="$">Log Out</a>
-                        </div>
                     </li>
                 </ul>
             </nav>
+            <%-- Page Content Area --%>
             <div class="row" style="padding-top: 10px">
+                <%-- Video Section --%>
                 <div class="col-md-12">
-                    <center>                    <iframe width="683" height="384" src="https://www.youtube.com/embed/Hgbuzoda-ow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <center>
+                        <iframe width="683" height="384" src="https://www.youtube.com/embed/Hgbuzoda-ow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </center>
                 </div>
+                <%-- Comment Section --%>
                 <div class="col-12">
                     <div class="comments">
                         <div class="comments-details">
+                            <%-- Shows total comments available --%>
                             <span class="total-comments comments-sort"><s:property value ="commentList.size()"/> Comments</span>
+                            <%-- Option to sort the comments, default and only option is newest first --%>
                             <span class="dropdown">
-                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="padding-bottom:12px!important;">Sort By <span class=""></span></button>
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="margin-left: 2%!important; padding-bottom:12px!important;">Sort By <span class=""></span></button>
                                 <div class="dropdown-menu">
                                     <a href="#" class="dropdown-item">Newest First</a>
                                 </div>
                             </span>     
                         </div>
+                        <%-- Comment Box Section --%>
                         <div class="comment-box add-comment">
                             <span class="commenter-pic">
                                 <img src="images/user-icon.png" width="40px" height="60px" class="img-fluid">
@@ -180,8 +180,8 @@
                                 <input type="text" class="form-control" placeholder="Add a public comment" id="new-comment" name="new-comment">
                                 <button id="btn-comment" class="btn btn-default"  data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Comment</button>
                             </span>
-
                         </div>
+                        <%-- Iterator to load all comments in list to web page --%>
                         <s:iterator value="commentList">
                             <div class="comment-box">
                                 <span class="commenter-pic">
@@ -193,15 +193,18 @@
                                 <p class="comment-txt more"><s:property value="content" /></p>
                             </div>
                         </s:iterator>
+                        <%-- Creating comment form section --%>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
+                                    <%-- Title of form --%>
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">New comment</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+                                    <%-- Email and comment sections --%>
                                     <div class="modal-body">
                                         <!--     add action here-->
                                         <form action="createNewComment" method="POST" id="message-form">
@@ -221,51 +224,43 @@
                                     </div>
                                 </div>
                             </div>
-                        </div
+                        </div>
                     </div>
                 </div>
-                <script src="lib/jquery/jquery-3.5.1.js">
-                </script>
-                <script src="lib/popper/popper.min.js">
-                </script>
-                <script src="lib/bootstrap/js/bootstrap.js">
-                </script>
-                <script>
-                    $('#btn-comment').click(function () {
-                        $("#message-text").val($("#new-comment").val());
-                    });
-                    $('#exampleModal').on('show.bs.modal', function (event) {
-                        var button = $(event.relatedTarget) // Button that triggered the modal
-                        var recipient = button.data('whatever') // Extract info from data-* attributes
-                        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-                        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-                        var modal = $(this)
-                    });
-                    function ValidateEmail(mail)
-                    {
-                        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
-                        {
-                            return (true)
-                        }
-                        alert("You have entered an invalid email address!")
-                        return (false)
-                    }
-                    function ValidateMessage(message)
-                    {
-                        if (message.length > 0)
-                        {
-                            return (true)
-                        }
-                        alert("You must entry message!")
-                        return (false)
-                    }
+            </div>
+        </div>
+        <script src="lib/jquery/jquery-3.5.1.js"></script>
+        <script src="lib/popper/popper.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.js"></script>
+        <%-- Script for input validation and new comment form open action --%>
+        <script>
+            $('#btn-comment').click(function () {
+                $("#message-text").val($("#new-comment").val());
+            });
+            function ValidateEmail(mail)
+            {
+                if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
+                {
+                    return (true)
+                }
+                alert("You have entered an invalid email address!")
+                return (false)
+            }
+            function ValidateMessage(message)
+            {
+                if (message.length > 0)
+                {
+                    return (true)
+                }
+                alert("You must entry message!")
+                return (false)
+            }
 
-
-                    $('#btn-submit').click(function () {
-                        if (ValidateEmail($("#email").val()) && ValidateMessage($("#message-text").val())) {
-                            $("#message-form").submit();
-                        }
-                    });
-                </script>
-                </body>
-                </html>
+            $('#btn-submit').click(function () {
+                if (ValidateEmail($("#email").val()) && ValidateMessage($("#message-text").val())) {
+                    $("#message-form").submit();
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -6,30 +6,25 @@ import java.io.Serializable;
  *
  * @author Quan Duc Loc CE140037 (SE1401)
  */
+
+/* Object to store a comment's data */
 public class CommentDTO implements Serializable {
-    private int id;
+    /* A comment's properties */
     private String email;
     private String content;
     private String created_at;
 
+    /* Constructors */
     public CommentDTO() {
     }
 
-    public CommentDTO(int id, String email, String content, String created_at) {
-        this.id = id;
+    public CommentDTO(String email, String content, String created_at) {
         this.email = email;
         this.content = content;
         this.created_at = created_at;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    /* Getters and Setters */
     public String getEmail() {
         return email;
     }
@@ -53,6 +48,5 @@ public class CommentDTO implements Serializable {
     public void setCreated_at(String created_at) {
         this.created_at = created_at;
     }
-    
     
 }
