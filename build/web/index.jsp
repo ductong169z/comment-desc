@@ -110,7 +110,6 @@
                 font-weight: bold;
             }
 
-
             /*======Responsive CSS=======*/
             @media (max-width: 767px){
                 .comments .commenter-name {
@@ -132,13 +131,10 @@
         </style> 
     </head>
     <body>
-        <div class="container" style="background: #FFFFFF!important">
+        <div class="container pl-0 pr-0" style="background: #FFFFFF!important">
             <%-- Navigation bar area --%>
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                 <a class="navbar-brand" href="#"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarsExample03">
                     <span class="text-light h4 mb-0">Comment Page</span>
                 </div>
@@ -152,11 +148,11 @@
                 </ul>
             </nav>
             <%-- Page Content Area --%>
-            <div class="row" style="padding-top: 10px">
+            <div class="row pl-5 pr-5" style="padding-top: 15px">
                 <%-- Video Section --%>
-                <div class="col-md-12">
+                <div class="col-12-md embed-responsive embed-responsive-16by9">
                     <center>
-                        <iframe width="820" height="460" src="https://www.youtube.com/embed/Hgbuzoda-ow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Hgbuzoda-ow" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </center>
                 </div>
                 <%-- Comment Section --%>
@@ -181,7 +177,7 @@
                                 <img src="images/user-icon.png" width="40px" height="60px" class="img-fluid">
                             </span>
                             <span class="commenter-name">
-                                <input type="text" class="form-control" placeholder="Add a public comment" id="new-comment" name="new-comment" autofocus>
+                                <input type="text" class="form-control" placeholder="Add a public comment" id="new-comment" name="new-comment">
                                 <button id="btn-comment" class="btn btn-default text-light"  data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" style="background-color: #343a40!important;">Comment</button>
                             </span>
                         </div>
@@ -259,18 +255,18 @@
 //                }
 //            });
 
-            <%-- Trigger comment form to open when pressing enter (outside of form) --%>
-            // Get the input field
-            var input = document.getElementById("new-comment");
-
-            // Execute a function when the user releases a key on the keyboard
-            input.addEventListener("keydown", function (event) {
-                // Number 13 is the "Enter" key on the keyboard
-                if (event.keyCode === 13) {
-                    // Trigger the button element with a click
-                    document.getElementById("btn-comment").click();
-                }
-            });
+//            <%-- Trigger comment form to open when pressing enter (outside of form) --%>
+//            // Get the input field
+//            var input = document.getElementById("new-comment");
+//
+//            // Execute a function when the user releases a key on the keyboard
+//            input.addEventListener("keydown", function (event) {
+//                // Number 13 is the "Enter" key on the keyboard
+//                if (event.keyCode === 13) {
+//                    // Trigger the button element with a click
+//                    document.getElementById("btn-comment").click();
+//                }
+//            });
 
             <%-- Trigger comment button (inside form) --%>
             // Get the input field
