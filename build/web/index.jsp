@@ -10,8 +10,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Comment</title>
+        <title>Comment Page</title>
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
+        <!-- CSS for the project -->
         <style>
             .comments-details button.btn.dropdown-toggle,
             .comments-details .total-comments {
@@ -139,12 +140,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarsExample03">
+                    <span class="text-light h4 mb-0">Comment Page</span>
                 </div>
                 <img src="images/user-icon.png" width="40px" height="60px" class="img-fluid">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#" class="nav-link" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                            Welcome, Uzaki-chan <b class="caret"></b>
+                        <a href="#" class="nav-link text-light" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                            Welcome, Uzaki-chan!
                         </a>
                     </li>
                 </ul>
@@ -154,12 +156,13 @@
                 <%-- Video Section --%>
                 <div class="col-md-12">
                     <center>
-                        <iframe width="683" height="384" src="https://www.youtube.com/embed/Hgbuzoda-ow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="820" height="460" src="https://www.youtube.com/embed/Hgbuzoda-ow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </center>
                 </div>
                 <%-- Comment Section --%>
                 <div class="col-12">
                     <div class="comments">
+                        <%-- Comment Details and Sort Button --%>
                         <div class="comments-details">
                             <%-- Shows total comments available --%>
                             <span class="total-comments comments-sort"><s:property value ="commentList.size()"/> Comments</span>
@@ -171,16 +174,18 @@
                                 </div>
                             </span>     
                         </div>
+
                         <%-- Comment Box Section --%>
                         <div class="comment-box add-comment">
                             <span class="commenter-pic">
                                 <img src="images/user-icon.png" width="40px" height="60px" class="img-fluid">
                             </span>
                             <span class="commenter-name">
-                                <input type="text" class="form-control" placeholder="Add a public comment" id="new-comment" name="new-comment">
-                                <button id="btn-comment" class="btn btn-default"  data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Comment</button>
+                                <input type="text" class="form-control" placeholder="Add a public comment" id="new-comment" name="new-comment" autofocus>
+                                <button id="btn-comment" class="btn btn-default text-light"  data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" style="background-color: #343a40!important;">Comment</button>
                             </span>
                         </div>
+
                         <%-- Iterator to load all comments in list to web page --%>
                         <s:iterator value="commentList">
                             <div class="comment-box">
@@ -190,9 +195,10 @@
                                 <span class="commenter-name">
                                     <s:property value="email" /><a href="#"></a> <span class="comment-time"><s:property value="created_at" /></span>
                                 </span>       
-                                <p class="comment-txt more"><s:property value="content" /></p>
+                                <p class="comment-txt more" style="overflow-wrap: anywhere!important;"><s:property value="content" /></p>
                             </div>
                         </s:iterator>
+
                         <%-- Creating comment form section --%>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -210,7 +216,7 @@
                                         <form action="createNewComment" method="POST" id="message-form">
                                             <div class="form-group">
                                                 <label for="email" class="col-form-label">Email:</label>
-                                                <input type="text" class="form-control" id="email" name="email">
+                                                <input type="text" class="form-control" id="message-email" name="email">
                                             </div>
                                             <div class="form-group">
                                                 <label for="comment" class="col-form-label">Comment:</label>
@@ -229,35 +235,94 @@
                 </div>
             </div>
         </div>
+        <%-- Scripts for Bootstraps and jQuery --%>
         <script src="lib/jquery/jquery-3.5.1.js"></script>
         <script src="lib/popper/popper.min.js"></script>
         <script src="lib/bootstrap/js/bootstrap.js"></script>
-        <%-- Script for input validation and new comment form open action --%>
+        <%-- Scripts for everything --%>
         <script>
             $('#btn-comment').click(function () {
                 $("#message-text").val($("#new-comment").val());
             });
+
+            <%-- Focus on email field when open the comment form modal --%>
+            $('#exampleModal').on('shown.bs.modal', function () {
+                $('#message-email').focus();
+            });
+
+//
+//            $(document).keypress(function (e) {
+//                if ($("body").hasClass('modal-open') && (e.keycode == 13 || e.which == 13)) {
+//
+//                } else {
+//
+//                }
+//            });
+
+            <%-- Trigger comment form to open when pressing enter (outside of form) --%>
+            // Get the input field
+            var input = document.getElementById("new-comment");
+
+            // Execute a function when the user releases a key on the keyboard
+            input.addEventListener("keydown", function (event) {
+                // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+                    // Trigger the button element with a click
+                    document.getElementById("btn-comment").click();
+                }
+            });
+
+            <%-- Trigger comment button (inside form) --%>
+            // Get the input field
+            var input2 = document.getElementById("message-email");
+
+            // Execute a function when the user releases a key on the keyboard
+            input2.addEventListener("keydown", function (event) {
+                // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+                    // Cancel the default action, if needed
+                    event.preventDefault();
+                    // Trigger the button element with a click
+                    document.getElementById("btn-submit").click();
+                }
+            });
+
+            // Get the input field
+            var input3 = document.getElementById("message-text");
+
+            // Execute a function when the user releases a key on the keyboard
+            input3.addEventListener("keydown", function (event) {
+                // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    // Trigger the button element with a click
+                    document.getElementById("btn-submit").click();
+                }
+            });
+
+            <%-- Validate message and email, and validation trigger when "Comment" button in form is clicked --%>
             function ValidateEmail(mail)
             {
-                if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
+                if (/^([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z0-9]+)([\.])([a-zA-Z\.]+)$/.test(mail))
                 {
                     return (true)
                 }
                 alert("You have entered an invalid email address!")
                 return (false)
             }
+
             function ValidateMessage(message)
             {
                 if (message.length > 0)
                 {
                     return (true)
                 }
-                alert("You must entry message!")
+                alert("You must enter a message!")
                 return (false)
             }
 
             $('#btn-submit').click(function () {
-                if (ValidateEmail($("#email").val()) && ValidateMessage($("#message-text").val())) {
+                if (ValidateEmail($("#message-email").val()) && ValidateMessage($("#message-text").val())) {
                     $("#message-form").submit();
                 }
             });
