@@ -7,10 +7,14 @@
     <package name="default" extends="struts-default">
         <!-- Actions used in the project -->
         <action name="createNewComment" class="web.controller.CreateNewComment" >
-            <result name="success" type="chain">index</result>
+            <result name="success"  type="redirectAction">index</result>
         </action>
         <action name="index" class="web.controller.LoadAllComments" >
-            <result name="success">index.jsp</result>
+            <result name="success">view/index.jsp</result>
         </action>
+        <global-results>
+            <result name="error">/error/404.jsp</result>
+        </global-results>
+       
     </package>
 </struts>
