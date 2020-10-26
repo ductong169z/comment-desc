@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
         <style>
             .error {
                 margin: 0 auto;
@@ -68,7 +68,7 @@
 
             <div class="error-desc">
                 <div>
-                    <a class="login-detail-panel-button btn" style="font-family: 'Segoe UI'; text-align: center;" href="index">
+                    <a class="login-detail-panel-button btn" style="font-family: 'Segoe UI'; text-align: center;" href="">
                         <i class="fa fa-arrow-left" style="font-family: 'Segoe UI'; text-align: center;"></i>
                         Click here to go back to Homepage                        
                     </a>

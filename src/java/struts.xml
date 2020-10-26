@@ -12,10 +12,10 @@
         <action name="index" class="web.controller.LoadAllComments" >
             <result name="success">view/index.jsp</result>
         </action>
-        <action name="error" class="web.controller.ErrorAction">
+<!--        <action name="error" class="web.controller.ErrorAction">
             <result name="404">/error/404.jsp</result>
             <result name="500">/error/500.jsp</result>
-        </action> 
+        </action> -->
     </package>
     <package name="serveAll" namespace="" extends="struts-default">
         <action name="*">
