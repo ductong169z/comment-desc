@@ -57,14 +57,14 @@
                 text-decoration: none;
                 border-color: #FFFFFF;
             }
-            
+
         </style>
         <title>404 Not Found - Comment Page</title>
     </head>
     <body>
         <div class="error" style="background-image: url('images/bg-19.png'); background-repeat: no-repeat; background-size: cover; background-position: 10% 90%; background-attachment: fixed;">
             <div class="error-code m-b-10 m-t-20" style="font-family: 'Segoe UI';">404 Not Found</div>
-            <!--            <h2 class="font-bold" style="font-family: 'Segoe UI'; text-align: center;">We couldn't find the page...</h2>-->
+            <h1 class="font-bold" style="font-family: 'Segoe UI'; text-align: center;">We couldn't find the page you requested...</h1>
 
             <div class="error-desc">
                 <div>

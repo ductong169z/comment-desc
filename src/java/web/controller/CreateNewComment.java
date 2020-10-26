@@ -16,6 +16,11 @@ public class CreateNewComment extends ActionSupport {
     public CreateNewComment() {
     }
 
+    /**
+     * Main execute method for Create New Comment Action
+     * @return "success" indicates the action is successful, else return "fail"
+     * @throws Exception
+     */
     @Override
     public String execute() throws Exception {
         WebDAO dao = new WebDAO(); // create an object to interact with database

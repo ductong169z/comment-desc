@@ -65,7 +65,7 @@
     <body>
         <div class="error" style="background-image: url('images/bg-19.png'); background-repeat: no-repeat; background-size: cover; background-position: 10% 90%; background-attachment: fixed;">
             <div class="error-code m-b-10 m-t-20" style="font-family: 'Segoe UI'; text-align: center;">500 Internal Server Error</div>
-            <!--            <h2 class="font-bold" style="font-family: 'Segoe UI'; text-align: center;">Please try again...</h2>-->
+            <h1 class="font-bold" style="font-family: 'Segoe UI'; text-align: center;">Oops, something went wrong...</h1>
 
             <div class="error-desc">
                 <div>

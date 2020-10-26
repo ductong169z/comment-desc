@@ -18,8 +18,8 @@ public class LoadAllComments extends ActionSupport {
     }
 
     /**
-     * Main execute method for Action
-     * @return
+     * Main execute method for Load All Comments Action
+     * @return "success" indicates the action is successful
      * @throws Exception
      */
     @Override
