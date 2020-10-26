@@ -24,6 +24,7 @@
                 font-size: 96px;
                 font-family: 'Raleway', sans-serif;
                 line-height: 100px;
+                text-align: right;
             }
 
             .font-bold{
@@ -57,12 +58,12 @@
             }
 
         </style>
-        <title>404 Not Found - Comment Page</title>
+        <title>500 Internal Server Error - Comment Page</title>
     </head>
     <body>
         <div class="error" style="background-image: url('images/bg-14.jpg'); background-repeat: no-repeat; background-size: cover; background-position: 10% 90%; background-attachment: fixed;">
-            <div class="error-code m-b-10 m-t-20" style="font-family: 'Segoe UI';">404 Not Found</div>
-            <h2 class="font-bold" style="font-family: 'Segoe UI'; text-align: center;">We couldn't find the page...</h2>
+            <div class="error-code m-b-10 m-t-20" style="font-family: 'Segoe UI'; text-align: center;">500 Internal Server Error</div>
+            <h2 class="font-bold" style="font-family: 'Segoe UI'; text-align: center;">Please try again...</h2>
 
             <div class="error-desc">
                 <div>

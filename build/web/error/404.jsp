@@ -9,11 +9,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="https://use.fontawesome.com/7a37b2739f.js"></script>
         <style>
             .error {
                 margin: 0 auto;
@@ -54,7 +49,7 @@
             }
 
             .login-detail-panel-button {
-                font-size: 20px;
+                font-size: 40px;
                 color: #fdfff5;
                 border-radius: 30px !important;
                 text-decoration: none;
@@ -62,19 +57,18 @@
             }
 
         </style>
-        <title>404 Not Found - WibuAnimeList</title>
+        <title>404 Not Found - Comment Page</title>
     </head>
     <body>
-        <jsp:include page='header.jsp'/>
         <div class="error" style="background-image: url('images/bg-14.jpg'); background-repeat: no-repeat; background-size: cover; background-position: 10% 90%; background-attachment: fixed;">
-            <div class="error-code m-b-10 m-t-20">404 Not Found</div>
-            <h3 class="font-bold">We couldn't find the page...</h3>
+            <div class="error-code m-b-10 m-t-20" style="font-family: 'Segoe UI';">404 Not Found</div>
+            <h2 class="font-bold" style="font-family: 'Segoe UI'; text-align: center;">We couldn't find the page...</h2>
 
             <div class="error-desc">
                 <div>
-                    <a class="login-detail-panel-button btn" href="index">
-                        <i class="fa fa-arrow-left"></i>
-                        Go back to Homepage                        
+                    <a class="login-detail-panel-button btn" style="font-family: 'Arial'; text-align: center;" href="index">
+                        <i class="fa fa-arrow-left" style="font-family: 'Segoe UI'; text-align: center;"></i>
+                        Click here to go back to Homepage                        
                     </a>
                 </div>
             </div>
