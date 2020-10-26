@@ -66,7 +66,7 @@
 
             <div class="error-desc">
                 <div>
-                    <a class="login-detail-panel-button btn" style="font-family: 'Arial'; text-align: center;" href="index">
+                    <a class="login-detail-panel-button btn" style="font-family: 'Segoe UI'; text-align: center;" href="index">
                         <i class="fa fa-arrow-left" style="font-family: 'Segoe UI'; text-align: center;"></i>
                         Click here to go back to Homepage                        
                     </a>
