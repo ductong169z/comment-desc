@@ -19,7 +19,7 @@
     </session-config>
     
     <welcome-file-list>
-        <welcome-file>index</welcome-file>
+        <welcome-file>/view/tempindex.jsp</welcome-file>
     </welcome-file-list>
     
     <error-page>
