@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <style>
             .error {
                 margin: 0 auto;
@@ -52,7 +53,8 @@
             .login-detail-panel-button {
                 font-size: 40px;
                 color: #fdfff5;
-                border-radius: 30px !important;
+                border-radius: 50px !important;
+                border-width: 3px;
                 text-decoration: none;
                 border-color: #FFFFFF;
             }
@@ -61,9 +63,9 @@
         <title>500 Internal Server Error - Comment Page</title>
     </head>
     <body>
-        <div class="error" style="background-image: url('images/bg-14.jpg'); background-repeat: no-repeat; background-size: cover; background-position: 10% 90%; background-attachment: fixed;">
+        <div class="error" style="background-image: url('images/bg-19.png'); background-repeat: no-repeat; background-size: cover; background-position: 10% 90%; background-attachment: fixed;">
             <div class="error-code m-b-10 m-t-20" style="font-family: 'Segoe UI'; text-align: center;">500 Internal Server Error</div>
-            <h2 class="font-bold" style="font-family: 'Segoe UI'; text-align: center;">Please try again...</h2>
+            <!--            <h2 class="font-bold" style="font-family: 'Segoe UI'; text-align: center;">Please try again...</h2>-->
 
             <div class="error-desc">
                 <div>
