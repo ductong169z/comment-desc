@@ -299,11 +299,12 @@
             <%-- Validate message and email, and validation trigger when "Comment" button in form is clicked --%>
             function ValidateEmail(mail)
             {
-                if (/^([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z0-9]+)([\.])([a-zA-Z\.]+)$/.test(mail))
+                if (/^([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z0-9]+)([\.])([a-zA-Z\.]+)$/.test(mail) && mail.length <= 60)
                 {
                     return (true)
                 }
-                alert("You have entered an invalid email address!")
+                alert("You have entered an invalid email address! (Email length must be equal to or less than 60 characters)")
+                $('#message-email').focus();
                 return (false)
             }
 
@@ -314,6 +315,7 @@
                     return (true)
                 }
                 alert("You must enter a message!")
+                $('#message-text').focus();
                 return (false)
             }
 

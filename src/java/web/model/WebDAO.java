@@ -78,7 +78,7 @@ public class WebDAO {
             conn = DBUtils.makeConnection(); // make a connection to database
             
             /* Prepare SQL selection statement to get all comments from database */
-            st = conn.prepareStatement("SELECT * FROM comment ORDER BY created_at DESC");
+            st = conn.prepareStatement("SELECT email, content, created_at FROM comment ORDER BY created_at DESC");
             
             rs = st.executeQuery(); // execute the statement
 
@@ -90,9 +90,9 @@ public class WebDAO {
                 }
 
                 /* Temp variables to store data of a comment retrieved from database */
-                String email = rs.getString(2);
-                String content = rs.getString(3);
-                Timestamp created_at = rs.getTimestamp(4);
+                String email = rs.getString(1);
+                String content = rs.getString(2);
+                Timestamp created_at = rs.getTimestamp(3);
                 
                 /* Add a new comment with all of the above data into comment list */
                 commentList.add(new CommentDTO(email, content, new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(created_at)));
